@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <script>
+        function fun()
+        {
+            let a=parseFloat(document.getElementById("weight").value);
+            let b=parseFloat(document.getElementById("height").value);
+            let res=parseInt((a/(b*b))*10000);
+            bmi=parseInt(res);
+            document.getElementById("res").value=bmi+" kg/m2";
+            if(res<=18.5)
+            {
+                document.getElementById("statues").value="Under Weight";
+            }
+            else if(res>=18.5 && res<=24.9)
+            {
+                document.getElementById("statues").value="Normal";
+            }
+            else if(res>=25 && res<=29.9)
+            {
+                document.getElementById("statues").value="Over Weight";
+            }
+            else if(res>=30 && res<=34.9)
+            {
+                document.getElementById("statues").value="Obesity";
+            }
+            else if(res>=40)
+            {
+                document.getElementById("statues").value="Extreem Obesity";
+            }
+        }
+    </script>
+    </head>
+    <body>
+        <table align="center" border="2">
+            <th><h1><b>BMI Calculator</b></h1></th>
+        <tr><td><p>Enter your Weight(in kg)<input id="weight"></p></td></tr>
+        <tr><td><p>Enter your Height(in cm)<input id="height"></p></td></tr>
+        <tr><td><p><button onclick="fun()">Calculate</button>&#128241;</p></td></tr>
+        <tr><td><p>BMI&#128073;<input id="res"></p></td></tr>
+        <tr><td><p>Statues<input id="statues">&#127873;</p></td></tr>
+    </table>
+    </body>
+</html>
